@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXORA | Premium Eyewear</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#home" class="logo">LUXORA<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#cart" class="cart-link">Bag (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <!-- HERO CAROUSEL -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">THE NEW EYEWEAR COLLECTION</p>
+      <h1>See the world<br>in <span>your style.</span></h1>
+      <p>Premium sunglasses. Timeless design. Unmistakable confidence.</p>
+      <a href="#products" class="btn">EXPLORE COLLECTION ↗</a>
+      <div class="carousel-controls">
+        <button id="prev-slide" aria-label="Previous slide">←</button>
+        <span id="slide-number">01 / 03</span>
+        <button id="next-slide" aria-label="Next slide">→</button>
+      </div>
+    </div>
+    <div class="hero-image" id="hero-image">
+      <span class="hero-label">LUXORA / 2026</span>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div>✦ Premium Design</div>
+    <div>✦ UV Protection Styles</div>
+    <div>✦ Free Shipping Over ₹2,000</div>
+    <div>✦ Made for Your Lifestyle</div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <main>
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR SIGNATURE LOOK</p>
+          <h2>Shop the Collection</h2>
+        </div>
+        <select id="category-filter" aria-label="Filter products">
+          <option value="all">All Styles</option>
+          <option value="Aviator">Aviator</option>
+          <option value="Classic">Classic</option>
+          <option value="Sport">Sport</option>
+          <option value="Luxury">Luxury</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div>
+        <p class="eyebrow">MORE THAN AN ACCESSORY</p>
+        <h2>Designed to make<br>a statement.</h2>
+      </div>
+      <p>
+        At LUXORA, we believe eyewear is an expression of who you are.
+        Discover contemporary silhouettes, effortless comfort, and
+        standout styles for every occasion.
+      </p>
+    </section>
+
+    <!-- CART AND BILLING -->
+    <section class="checkout-section" id="cart">
+      <div class="checkout-title">
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h2>Shopping Bag & Billing</h2>
+      </div>
+
+      <div class="checkout-layout">
+        <div class="cart-panel">
+          <h3>Your Cart</h3>
+          <div id="cart-items">
+            <p class="empty-cart">Your bag is waiting for something stylish.</p>
+          </div>
+        </div>
+
+        <div class="billing-panel">
+          <h3>Customer Details</h3>
+          <form id="checkout-form">
+            <label for="customer-name">Full Name</label>
+            <input id="customer-name" required placeholder="Enter your name">
+
+            <label for="customer-phone">Phone Number</label>
+            <input id="customer-phone" type="tel"
+                   pattern="[0-9]{10}" maxlength="10" required
+                   placeholder="10-digit mobile number">
+
+            <label for="customer-email">Email Address</label>
+            <input id="customer-email" type="email" required
+                   placeholder="you@example.com">
+
+            <label for="customer-address">Delivery Address</label>
+            <textarea id="customer-address" required
+                      placeholder="House, street, city, PIN code"></textarea>
+
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" required>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+              <option value="UPI (demo)">UPI (demo)</option>
+              <option value="Card (demo)">Card (demo)</option>
+            </select>
+
+            <div class="price-row">
+              <span>Subtotal</span><span id="subtotal">₹0</span>
+            </div>
+            <div class="price-row">
+              <span>Shipping</span><span id="shipping">₹0</span>
+            </div>
+            <div class="price-row">
+              <span>GST (18% included in listed prices)</span>
+              <span id="gst">₹0</span>
+            </div>
+            <div class="price-row total-row">
+              <span>Total</span><span id="total">₹0</span>
+            </div>
+
+            <button type="submit" class="btn checkout-btn">
+              PLACE ORDER
+            </button>
+            <p class="demo-note">
+              Demo checkout only. No real payment is collected.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVOICE -->
+    <section class="invoice-section" id="invoice-section" hidden>
+      <div class="invoice" id="invoice">
+        <div class="invoice-header">
+          <div>
+            <h2>LUXORA<span>.</span></h2>
+            <p>Premium Eyewear</p>
+          </div>
+          <h3>INVOICE</h3>
+        </div>
+        <div id="invoice-details"></div>
+        <div id="invoice-items"></div>
+        <div id="invoice-total"></div>
+        <p class="thank-you">Thank you for choosing LUXORA!</p>
+      </div>
+      <div class="invoice-actions">
+        <button class="btn" id="print-invoice">PRINT INVOICE</button>
+        <button class="btn secondary-btn" id="download-invoice">
+          DOWNLOAD INVOICE
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="footer-main">
+      <div>
+        <a href="#home" class="logo">LUXORA<span>.</span></a>
+        <p>Find your look. Own your style.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#products">All Sunglasses</a>
+        <a href="#about">Our Story</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: hello@luxora.example</p>
+        <p>India | Online Store</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 LUXORA Eyewear. Demo storefront.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
